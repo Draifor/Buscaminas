@@ -5,16 +5,19 @@ html {
     box-sizing: inherit;
 }
 body {
-    background-color: #c1c8c7;
+    background: rgb(215,61,108);
+    background: linear-gradient(180deg, rgba(215,61,108,1) 0%, rgba(213,114,118,1) 27%, rgba(214,194,188,1) 52%, rgba(192,204,204,1) 75%, rgba(101,178,198,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
 }
 div.contenedor {
     width: 80%;
     margin-top: 10px;
-    background-color: #5e6668;
-    box-shadow: 0 0 10px 10px #d49c6b;
-    color: #d49c6b;
+    background-color: #d6c2bc;
+    box-shadow: 0 0 10px 10px #65b2c6;
+    /* color: #65b2c6; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 header h1 {
@@ -56,7 +59,7 @@ div.right div.cuadricula {
 }
 div.cuadricula div {
     border: 1px solid whitesmoke;
-    background-color: #252b31;
+    background-color: #d73d6c;
 }
 @media only screen and (min-width:768px) {
     div.contenedor {
