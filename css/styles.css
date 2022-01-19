@@ -34,7 +34,7 @@ div.left img {
     margin: 0 auto;
     display: block;
 }
-button {
+div.left button {
     margin: 20px auto;
     display: block;
     font-size: 1.1em;
@@ -57,9 +57,13 @@ div.right div.cuadricula {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
-div.cuadricula div {
+div.cuadricula button {
     border: 1px solid whitesmoke;
     background-color: #d73d6c;
+}
+div.cuadricula button:active {
+  cursor: pointer;
+  transform: scale(0.9);
 }
 @media only screen and (min-width:768px) {
     div.contenedor {
@@ -82,7 +86,7 @@ div.cuadricula div {
         top: 70px;
         left: 30%;
     }
-    button {
+    div.left button {
         position: absolute;
         top: 230px;
         left: 33%;
