@@ -56,10 +56,14 @@ div.right div.cuadricula {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    box-shadow: 0 0 10px 10px #8d072f;
 }
 div.cuadricula button {
     border: 1px solid whitesmoke;
     background-color: #d73d6c;
+}
+div.cuadricula button:hover {
+    background-color: #8d072f;
 }
 div.cuadricula button:active {
   cursor: pointer;
