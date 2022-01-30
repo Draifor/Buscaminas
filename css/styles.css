@@ -70,11 +70,8 @@ div.right {
     height: 330px;
 }
 div.right p {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     text-align: center;
     font-size: 1.45em;
-    /* letter-spacing: 1px; */
-    /* font-weight: 600; */
     margin: 0 0 20px;
 }
 p span {
@@ -118,13 +115,13 @@ div.cuadricula button:active {
         width: 150px;
         border-radius: 50%;
         position: absolute;
-        top: 70px;
+        top: 50px;
         left: 30%;
     }
     div.left button {
         position: absolute;
-        top: 230px;
-        left: 33%;
+        top: 210px;
+        left: 31%;
     }
     div.right {
         float: right;

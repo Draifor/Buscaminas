@@ -1,10 +1,3 @@
-/*
-Crea una clase tablero que tenga como características la matriz del tablero
-Mueve la función evaluar(x,y) a la clase tablero
-Haz un refactor al código y usa un constructor para crear el tablero, usa el
-objeto creado para interactuar en tus algoritmos y usar la función evaluar(x,y)
-desde el objeto
-*/
 // ** Declaración de las constantes **
 const CANT_FILAS = 4;
 const CANT_COLUMNAS = 4;
