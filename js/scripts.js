@@ -1,123 +1,142 @@
 /*
-Crea una función que determine el número de bombas adyacentes a la
-coordenada que se acaba de ingresar.
+Crea una clase tablero que tenga como características la matriz del tablero
+Mueve la función evaluar(x,y) a la clase tablero
+Haz un refactor al código y usa un constructor para crear el tablero, usa el
+objeto creado para interactuar en tus algoritmos y usar la función evaluar(x,y)
+desde el objeto
 */
-
-//* Declaración de variables
-let detonarBomba = false;
-let tablero = [];
-
-// Declaración de constantes
-const CANT_CASILLAS = 16;
+// ** Declaración de las constantes **
 const CANT_FILAS = 4;
 const CANT_COLUMNAS = 4;
+const CANT_MINAS = 6;
 
-// Función para pedir las coordenadas
-const jugar = () => {
-  let ejeX = parseInt(prompt("Ingrese el número de la fila:")) - 1;
-  let ejeY = parseInt(prompt("Ingrese el número de la columna:")) - 1;
+// ** Declaración de variables **
+let detonarMina = false;
 
-  evaluar(ejeX, ejeY);
-  console.log(tabl)
-};
+// ** Definición de la clase **
+class Tablero {
 
-// Función para evaluar las coordenadas recibidas
-//* Evaluar el rango de las coordenadas
-const evaluar = (ejeX, ejeY) => {
-  if (ejeX < 0 || ejeX + 1 > tablero.length)
-    alert("Número de fila incorrecto.");
-  else if (ejeY < 0 || ejeY + 1 > tablero[ejeX].length)
-    alert("Número de columna incorrecto.");
+  constructor() {
+    // Atributos de la clase
+    this.matriz = [];
+    this.crearTablero();
+  }
 
-  //* Validación de la posición respecto a las bombas
-  if (tablero[ejeX][ejeY] == 1) {
-    alert("Kaboooooooooooommmm!!!!");
-    detonarBomba = true;
-  } else alert(`Hay ${bombasAdyacentes(ejeX, ejeY)} bombas alrededor`);
-};
+  // ** Definición de las funciones de la clase **
 
-// Función para inicializar el tablero
-const inicializarTablero = (cantBombas) => {
-  let codigo;
-  let contador = 0;
-  for (let i = 0; i < CANT_FILAS; i++) {
-    tablero.push([]);
-    while (tablero[i].length < CANT_COLUMNAS) {
-      codigo = Math.round(Math.random());
-      if (codigo == 1 && contador < cantBombas) {
-        tablero[i].push(codigo);
-        contador++;
-      } else if (codigo == 0) tablero[i].push(codigo);
+  // Función para crear la matriz con las respectivas minas en posiciones aleatorias
+  crearTablero = () => {
+    // Variables auxiliares
+    let codigo;
+    let contador = 0;
+
+    while (contador < CANT_MINAS) {
+      for (let i = 0; i < CANT_FILAS; i++) {
+        this.matriz.push([]);
+        while (this.matriz[i].length < CANT_COLUMNAS) {
+          codigo = Math.round(Math.random());
+          if (codigo == 1 && contador < CANT_MINAS) {
+            this.matriz[i].push(codigo);
+            contador++;
+          } else if (codigo == 0) this.matriz[i].push(codigo);
+        }
+      }
     }
+  };
+
+  // Función para evaluar las coordenadas recibidas
+  evaluar = (fila, columna) => {
+    // Evaluar el rango de las coordenadas
+    if (fila < 0 || fila + 1 > this.matriz.length)
+      return alert("Número de fila incorrecto.");
+    else if (columna < 0 || columna + 1 > this.matriz[fila].length)
+      return alert("Número de columna incorrecto.");
+
+    // Validación de la posición respecto a las minas
+    if (this.matriz[fila][columna] == 1) {
+      alert("Kaboooooooooooommmm!!!!");
+      detonarMina = true;
+    } else alert(`Hay ${minasAdyacentes(fila, columna)} minas alrededor`);
   }
 };
 
-// Función para comprobar la cantidad de bombas adyacentes
-const bombasAdyacentes = (ejeX, ejeY) => {
+// ** Definición de las funciones **
+
+// Función para pedir las coordenadas
+const jugar = (tablero) => {
+  let fila = parseInt(prompt("Ingrese el número de la fila:")) - 1;
+  let columna = parseInt(prompt("Ingrese el número de la columna:")) - 1;
+
+  tablero.evaluar(fila, columna);
+};
+
+// Función para comprobar la cantidad de minas adyacentes
+const minasAdyacentes = (fila, columna) => {
   let contador = 0;
 
-  if (ejeX == 0) {
-    if (ejeY == 0) {
-      contador += tablero[ejeX][ejeY + 1];
-      contador += tablero[ejeX + 1][ejeY];
-      contador += tablero[ejeX + 1][ejeY + 1];
-    } else if (ejeY > 0 && ejeY < CANT_COLUMNAS - 1) {
-      contador += tablero[ejeX][ejeY - 1];
-      contador += tablero[ejeX][ejeY + 1];
-      contador += tablero[ejeX + 1][ejeY - 1];
-      contador += tablero[ejeX + 1][ejeY];
-      contador += tablero[ejeX + 1][ejeY + 1];
+  if (fila == 0) {
+    if (columna == 0) {
+      contador += tablero.matriz[fila][columna + 1];
+      contador += tablero.matriz[fila + 1][columna];
+      contador += tablero.matriz[fila + 1][columna + 1];
+    } else if (columna > 0 && columna < CANT_COLUMNAS - 1) {
+      contador += tablero.matriz[fila][columna - 1];
+      contador += tablero.matriz[fila][columna + 1];
+      contador += tablero.matriz[fila + 1][columna - 1];
+      contador += tablero.matriz[fila + 1][columna];
+      contador += tablero.matriz[fila + 1][columna + 1];
     } else {
-      contador += tablero[ejeX][ejeY - 1];
-      contador += tablero[ejeX + 1][ejeY - 1];
-      contador += tablero[ejeX + 1][ejeY];
+      contador += tablero.matriz[fila][columna - 1];
+      contador += tablero.matriz[fila + 1][columna - 1];
+      contador += tablero.matriz[fila + 1][columna];
     }
-  } else if (ejeX > 0 && ejeX < CANT_FILAS - 1) {
-    if (ejeY == 0) {
-      contador += tablero[ejeX - 1][ejeY];
-      contador += tablero[ejeX - 1][ejeY + 1];
-      contador += tablero[ejeX][ejeY + 1];
-      contador += tablero[ejeX + 1][ejeY];
-      contador += tablero[ejeX + 1][ejeY + 1];
-    } else if (ejeY > 0 && ejeY < CANT_COLUMNAS - 1) {
-      contador += tablero[ejeX - 1][ejeY - 1];
-      contador += tablero[ejeX - 1][ejeY];
-      contador += tablero[ejeX - 1][ejeY + 1];
-      contador += tablero[ejeX][ejeY - 1];
-      contador += tablero[ejeX][ejeY + 1];
-      contador += tablero[ejeX + 1][ejeY - 1];
-      contador += tablero[ejeX + 1][ejeY];
-      contador += tablero[ejeX + 1][ejeY + 1];
+  } else if (fila > 0 && fila < CANT_FILAS - 1) {
+    if (columna == 0) {
+      contador += tablero.matriz[fila - 1][columna];
+      contador += tablero.matriz[fila - 1][columna + 1];
+      contador += tablero.matriz[fila][columna + 1];
+      contador += tablero.matriz[fila + 1][columna];
+      contador += tablero.matriz[fila + 1][columna + 1];
+    } else if (columna > 0 && columna < CANT_COLUMNAS - 1) {
+      contador += tablero.matriz[fila - 1][columna - 1];
+      contador += tablero.matriz[fila - 1][columna];
+      contador += tablero.matriz[fila - 1][columna + 1];
+      contador += tablero.matriz[fila][columna - 1];
+      contador += tablero.matriz[fila][columna + 1];
+      contador += tablero.matriz[fila + 1][columna - 1];
+      contador += tablero.matriz[fila + 1][columna];
+      contador += tablero.matriz[fila + 1][columna + 1];
     } else {
-      contador += tablero[ejeX - 1][ejeY - 1];
-      contador += tablero[ejeX - 1][ejeY];
-      contador += tablero[ejeX][ejeY - 1];
-      contador += tablero[ejeX + 1][ejeY - 1];
-      contador += tablero[ejeX + 1][ejeY];
+      contador += tablero.matriz[fila - 1][columna - 1];
+      contador += tablero.matriz[fila - 1][columna];
+      contador += tablero.matriz[fila][columna - 1];
+      contador += tablero.matriz[fila + 1][columna - 1];
+      contador += tablero.matriz[fila + 1][columna];
     }
   } else {
-    if (ejeY == 0) {
-      contador += tablero[ejeX - 1][ejeY];
-      contador += tablero[ejeX - 1][ejeY + 1];
-      contador += tablero[ejeX][ejeY + 1];
-    } else if (ejeY > 0 && ejeY < CANT_COLUMNAS - 1) {
-      contador += tablero[ejeX][ejeY - 1];
-      contador += tablero[ejeX][ejeY + 1];
-      contador += tablero[ejeX - 1][ejeY - 1];
-      contador += tablero[ejeX - 1][ejeY];
-      contador += tablero[ejeX - 1][ejeY + 1];
+    if (columna == 0) {
+      contador += tablero.matriz[fila - 1][columna];
+      contador += tablero.matriz[fila - 1][columna + 1];
+      contador += tablero.matriz[fila][columna + 1];
+    } else if (columna > 0 && columna < CANT_COLUMNAS - 1) {
+      contador += tablero.matriz[fila][columna - 1];
+      contador += tablero.matriz[fila][columna + 1];
+      contador += tablero.matriz[fila - 1][columna - 1];
+      contador += tablero.matriz[fila - 1][columna];
+      contador += tablero.matriz[fila - 1][columna + 1];
     } else {
-      contador += tablero[ejeX][ejeY - 1];
-      contador += tablero[ejeX - 1][ejeY - 1];
-      contador += tablero[ejeX - 1][ejeY];
+      contador += tablero.matriz[fila][columna - 1];
+      contador += tablero.matriz[fila - 1][columna - 1];
+      contador += tablero.matriz[fila - 1][columna];
     }
   }
   return contador;
 };
 
-// Inicio del juego
-inicializarTablero(6);
-console.log(tablero);
-do {
-  jugar();
-} while (!detonarBomba);
+// ** Inicio del juego **
+// const tablero = new Tablero(CANT_FILAS, CANT_COLUMNAS, CANT_MINAS);
+// console.log(tablero.matriz);
+
+// do {
+//   jugar(tablero);
+// } while (!detonarMina);

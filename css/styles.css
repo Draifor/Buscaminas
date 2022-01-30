@@ -4,6 +4,24 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+@font-face {
+    font-family: "AlloyInk";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/a-alloy-ink/AlloyInk.woff") format("woff"), url("../fonts/a-alloy-ink/AlloyInk.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Devitta";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/devitta/Devitta.woff") format("woff"), url("../fonts/devitta/Devitta.otf") format("opentype");
+}
+@font-face {
+    font-family: "Sunny";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/sunny-spells/Sunnyspells.woff") format("woff"), url("../fonts/sunny-spells/Sunnyspells.otf") format("opentype");
+}
 body {
     background: rgb(215,61,108);
     background: linear-gradient(180deg, rgba(215,61,108,1) 0%, rgba(213,114,118,1) 27%, rgba(214,194,188,1) 52%, rgba(192,204,204,1) 75%, rgba(101,178,198,1) 100%);
@@ -19,11 +37,16 @@ div.contenedor {
     box-shadow: 0 0 10px 10px #043a47;
     color: #043a47;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:black;
+    font-family: "Devitta";
 }
 header h1 {
     text-align: center;
     padding: 20px;
     margin: 20px 0 0 0;
+    font-size: 2.5em;
+    color: #b12f56;
+    font-weight: 500;
 }
 div.left {
     height: 220px;
@@ -40,14 +63,22 @@ div.left button {
     font-size: 1.1em;
     padding: 6px 10px;
     border-radius: 8px;
-    font-weight: 600;;
+    font-weight: 600;
+    font-family: "Devitta";
 }
 div.right {
     height: 330px;
 }
 div.right p {
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.45em;
+    /* letter-spacing: 1px; */
+    /* font-weight: 600; */
+    margin: 0 0 20px;
+}
+p span {
+    margin: 0 -2px 0 2px;
 }
 div.right div.cuadricula {
     width: 250px;
