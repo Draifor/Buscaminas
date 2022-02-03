@@ -1,3 +1,5 @@
+/* ** Estilos generales ** */
+
 html {
     box-sizing: border-box;
 }
@@ -5,22 +7,10 @@ html {
     box-sizing: inherit;
 }
 @font-face {
-    font-family: "AlloyInk";
-    font-style: normal;
-    font-weight: normal;
-    src: local("?"), url("../fonts/a-alloy-ink/AlloyInk.woff") format("woff"), url("../fonts/a-alloy-ink/AlloyInk.ttf") format("truetype");
-}
-@font-face {
     font-family: "Devitta";
     font-style: normal;
     font-weight: normal;
     src: local("?"), url("../fonts/devitta/Devitta.woff") format("woff"), url("../fonts/devitta/Devitta.otf") format("opentype");
-}
-@font-face {
-    font-family: "Sunny";
-    font-style: normal;
-    font-weight: normal;
-    src: local("?"), url("../fonts/sunny-spells/Sunnyspells.woff") format("woff"), url("../fonts/sunny-spells/Sunnyspells.otf") format("opentype");
 }
 body {
     background: rgb(215,61,108);
@@ -31,64 +21,163 @@ body {
     justify-content: center;
 }
 div.contenedor {
-    width: 80%;
-    margin-top: 10px;
+    width: 90%;
+    margin: 10px 10px 0;
     background-color: #d6c2bc;
     box-shadow: 0 0 10px 10px #043a47;
-    color: #043a47;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:black;
     font-family: "Devitta";
 }
 header h1 {
     text-align: center;
     padding: 20px;
-    margin: 20px 0 0 0;
-    font-size: 2.5em;
+    margin: 0;
+    font-size: 2.3em;
     color: #b12f56;
     font-weight: 500;
 }
-div.left {
-    height: 220px;
+p.creditos {
+    text-align: center;
+    color: rgb(0, 67, 83);
+    margin: 0;
+    background-color: #aa9ea2;
 }
-div.left img {
+ /* ** Estilos página principal ** */
+
+ div.reglas {
+    margin: 0 auto;
+    font-size: 17px;
+    padding: 12px;
+    position: relative;
+  }
+  div.reglas h2 {
+      margin-top: 0;
+      text-align: center;
+      color: darkred;
+  }
+  div.reglas ol {
+    padding-left: 1.5rem;
+  }
+  ol li {
+    margin-top: 10px;
+    padding-left: 8px;
+  }
+  div.reglas p {
+    position: absolute;
+    bottom: -25%;
+    left: 5%;
+    right: 5%;
+    text-align: justify;
+  }
+  div.resultados {
+    margin: 80px auto 0;
+    width: 300px;
+    height: 150px;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.resultados i {
+    font-size: 23px;
+  }
+  div.resultados i:first-child {
+    position: relative;
+    bottom: 35px;
+    left: 125px;
+  }
+  div.resultados i:last-child {
+    position: relative;
+    top: 35px;
+    right: 122px;
+  }
+  div.resultados a {
+    margin: 0 5px;
+    font-size: 28px;
+    text-decoration: none;
+  }
+  div.resultados a:active {
+    cursor: pointer;
+    transform: scale(.9);
+  }
+  @media only screen and (min-width:670px) {
+    div.contenedor{
+      width: 960px;
+      height: 700px;
+    }
+    header h1 {
+      font-size: 2.5em;
+    }
+    div.reglas {
+      width: 95%;
+      border: 2px solid #000000;
+      font-size: 19px;
+    }
+    div.reglas p {
+       bottom : -30%;
+    }
+    div.resultados {
+      margin-top: 60px;
+    }
+    a {
+      font-size: 35px;
+    }
+  }
+
+/* ** Estilos página Juego ** */
+
+section.left {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.left div {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    position: relative;
+}
+section.left div.logo {
+    position: absolute;
+    top: 30px;
+}
+section.left img {
     width: 150px;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
 }
-div.left button {
-    margin: 20px auto;
+section.left button {
     display: block;
     font-size: 1.1em;
     padding: 6px 10px;
     border-radius: 8px;
     font-weight: 600;
     font-family: "Devitta";
+    position: absolute;
+    left: 60px;
 }
-div.right {
-    height: 330px;
-}
-div.right p {
+section.right p {
     text-align: center;
     font-size: 1.45em;
-    margin: 0 0 20px;
+    margin: 0 5px 5px;
 }
 p span {
     margin: 0 -2px 0 2px;
 }
-div.right div.cuadricula {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
+section.right div.cuadricula {
+    width: 280px;
+    height: 280px;
+    margin: 20px auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     box-shadow: 0 0 10px 10px #8d072f;
 }
 div.cuadricula button {
     border: 1px solid whitesmoke;
     background-color: #d73d6c;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 div.cuadricula button:hover {
     background-color: #8d072f;
@@ -97,40 +186,83 @@ div.cuadricula button:active {
   cursor: pointer;
   transform: scale(0.9);
 }
-@media only screen and (min-width:768px) {
+/* .uno {
+    color: #043a47;
+}
+.dos {
+    color: ;
+}
+.tres {
+    color: ;
+}
+.cuatro {
+    color: ;
+}
+.cinco {
+    color: ;
+}
+.seis {
+    color: ;
+}
+.siete {
+    color: ;
+}
+.ocho {
+    color: ;
+} */
+.bandera, .bomba, .bombaDet {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-bandera {
+    width : 83%;
+}
+.img-bombaDet {
+    width : 100%;
+}
+.img-bomba {
+    width : 95%;
+}
+@media only screen and (min-width:510px) {
+    div.contenedor {
+        height: auto;
+    }
+    section.right div.cuadricula {
+        width: 370px;
+        height: 370px;
+    }
+}
+@media only screen and (min-width:800px) {
     div.contenedor {
         width: 800px;
-        height: 480px;
+        height: 600px;
     }
-    main > div {
-        width: 50%;
-        margin-top: 20px;
-        position: relative;
+    main {
+        height: 490px;
     }
-    div.left {
+    section.left {
         float: left;
-        height: 330px;
+        width: 40%;
+        /* height: 330px; */
+        margin: 80px 0 0 0;
+        /* position: initial; */
     }
-    div.left img {
-        width: 150px;
-        border-radius: 50%;
-        position: absolute;
-        top: 50px;
-        left: 30%;
+    section.left div {
+        margin-top: 0;
     }
-    div.left button {
-        position: absolute;
-        top: 210px;
-        left: 31%;
+    section.left div.logo {
+        position: initial;
+        margin-top: 30px;
+        height: auto;
     }
-    div.right {
+    section.left button {
+        position: initial;
+        margin: 0 auto;
+    }
+    section.right {
         float: right;
-    }
-    div.right p {
-        text-align: center;
-    }
-    div.right div.cuadricula {
-        position: absolute;
-        left: 19%;
+        width: 60%;
     }
 }

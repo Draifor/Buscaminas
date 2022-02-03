@@ -1,48 +1,52 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condicionales - Proyecto Integrador</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Buscaminas</title>
     <link rel="icon" href="img/icono.ico">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/205d5b2bee.js" crossorigin="anonymous">
+    </script>
 </head>
+
 <body>
     <div class="contenedor">
         <header>
-            <h1>Draifor's Buscaminas</h1>
+            <h1>Buscaminas</h1>
         </header>
-        <main class="clearfix">
-            <div class="left">
-                <img src="img/Logo.png" alt="logo">
-                <button>Nuevo Juego</button>
-            </div><!--.left-->
 
-            <div class="right">
-                <p>Punta<span>j</span>e: 150</p>
-                <div class="cuadricula">
-                    <button class="c-01"></button>
-                    <button class="c-02"></button>
-                    <button class="c-03"></button>
-                    <button class="c-04"></button>
-                    <button class="c-05"></button>
-                    <button class="c-06"></button>
-                    <button class="c-07"></button>
-                    <button class="c-08"></button>
-                    <button class="c-09"></button>
-                    <button class="c-10"></button>
-                    <button class="c-11"></button>
-                    <button class="c-12"></button>
-                    <button class="c-13"></button>
-                    <button class="c-14"></button>
-                    <button class="c-15"></button>
-                    <button class="c-16"></button>
-                </div>
-            </div><!--.right-->
-        </main>
+        <div class="reglas">
+            <h2>Reglas de juego</h2>
+
+            <ol>
+                <li>El tablero está dividido en celdas, con minas distribuidas al azar.</li>
+                <li>Para ganar, debes abrir todas las celdas que no contienen minas.</li>
+                <li>Al hacer clic en una celda que no tiene una mina, se revela un número. Este número es la cantidad de
+                    celdas vecinas
+                    que contienen una mina.</li>
+                <li>Las celdas sospechosas de contener minas se pueden marcar con una bandera usando el botón derecho
+                    del ratón.</li>
+            </ol>
+
+            <p>Con esta información, puedes determinar las celdas que son seguras y las celdas que contienen minas.</p>
+
+        </div>
+        <!--.reglas-->
+
+        <div class="resultados">
+            <i class="far fa-hand-point-down"></i>
+            <i class="fas fa-hand-point-right"></i>
+            <a href="juego.html">Jugar Ahora</a>
+            <i class="fas fa-hand-point-left"></i>
+            <i class="far fa-hand-point-up"></i>
+        </div>
+
+        <p class="creditos">Diseñado por Luis Alfredo Parra - Colombia 2022</p>
     </div>
-    <script src="js/scripts.js"></script>
+    <!--.contenedor-->
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
