@@ -183,33 +183,30 @@ div.cuadricula button:hover {
     background-color: #8d072f;
 }
 div.cuadricula button:active {
-  cursor: pointer;
-  transform: scale(0.9);
-}
-/* .uno {
-    color: #043a47;
+    cursor: pointer;
+    transform: scale(0.9);
 }
 .dos {
-    color: ;
+    color: #005338;
 }
 .tres {
-    color: ;
+    color: rgb(28, 17, 134);
 }
 .cuatro {
-    color: ;
+    color: rgb(79, 0, 87);
 }
 .cinco {
-    color: ;
+    color: #8d0707;
 }
 .seis {
-    color: ;
+    color: #3f0315;
 }
 .siete {
-    color: ;
+    color: rgb(221, 0, 0);
 }
 .ocho {
-    color: ;
-} */
+    color: red;
+}
 .bandera, .bomba, .bombaDet {
     padding: 0;
     display: flex;
