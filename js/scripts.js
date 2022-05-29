@@ -43,14 +43,6 @@ class Tablero {
     this.ponerBombas();
   };
 
-  // Función para reinicializar la matriz
-  reiniciarMatriz = () => {
-    for (let i = 0; i < CANT_FILAS; i++) {
-      for (let j = 0; j < CANT_COLUMNAS; j++) {
-        this.matriz[i][j] = 0;
-      }
-    }
-  };
   // Crear y añadir casillas (botones) al tablero
   añadirCasilla = (casillaActual) => {
     casillaActual.boton = document.createElement("BUTTON");
@@ -303,7 +295,6 @@ botonNuevoJuego.onclick = () => {
 
 // Cambiar la dificultad del juego
 selectDificultad.onchange = () => {
-  if (finJuego) return;
   cant_minas =
     selectDificultad.value === "easy"
       ? 20
@@ -312,9 +303,9 @@ selectDificultad.onchange = () => {
       : 30;
   sessionStorage.setItem("minas", cant_minas);
   sessionStorage.setItem("difficulty", selectDificultad.value);
-  tablero.reiniciarMatriz();
-  tablero.ponerBombas();
+  location.reload();
 };
+
 // ** Inicio del juego **
 selectDificultad.value = sessionStorage.getItem("difficulty")
   ? sessionStorage.getItem("difficulty")
