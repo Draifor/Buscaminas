@@ -11,32 +11,41 @@
 </head>
 
 <body>
-    <div class="contenedor">
+    <div class="container">
         <header>
             <h1>Draifor's Buscaminas</h1>
         </header>
-        <main class="clearfix">
+        <main>
             <section class="right">
 
-                <div class="cuadricula"></div>
+                <div class="grid"></div>
 
-                <p>Punta<span>j</span>e: <span id="puntaje">0</span></p>
+                <p>Punta<span>j</span>e: <span id="score">0</span></p>
 
             </section>
             <!--.right-->
             <section class="left">
-                <div>
+                <div class="difficulty">
+                    <h2>Dificultad</h2>
+                    <select class="difficulty-select" id="difficulty" name="difficulty">
+                        <option value="easy">Fácil</option>
+                        <option value="medium" >Media</option>
+                        <option value="hard">Difícil</option>
+                    </select>
+                </div>
+                <div class="new-game-container">
                     <div class="logo">
                         <img src="img/Logo.png" alt="logo">
                     </div>
-                    <button>Nuevo Juego</button>
+                    <button id="new-game">Nuevo Juego</button>
                 </div>
             </section>
             <!--.left-->
 
         </main>
-        <p class="creditos">Diseñado por Luis Alfredo Parra - Colombia 2022</p>
+        <p class="credits">Diseñado por Luis Alfredo Parra - Colombia 2022</p>
     </div>
+    <!--.container-->
     <script src="js/scripts.js"></script>
 </body>
 

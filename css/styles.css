@@ -1,265 +1,302 @@
 /* ** Estilos generales ** */
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 @font-face {
-    font-family: "Devitta";
-    font-style: normal;
-    font-weight: normal;
-    src: local("?"), url("../fonts/devitta/Devitta.woff") format("woff"), url("../fonts/devitta/Devitta.otf") format("opentype");
+  font-family: "Devitta";
+  font-style: normal;
+  font-weight: normal;
+  src: local("?"), url("../fonts/devitta/Devitta.woff") format("woff"),
+    url("../fonts/devitta/Devitta.otf") format("opentype");
 }
 body {
-    background: rgb(215,61,108);
-    background: linear-gradient(180deg, rgba(215,61,108,1) 0%, rgba(213,114,118,1) 27%, rgba(214,194,188,1) 52%, rgba(192,204,204,1) 75%, rgba(101,178,198,1) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
+  background: rgb(215, 61, 108);
+  background: linear-gradient(
+    180deg,
+    rgba(215, 61, 108, 1) 0%,
+    rgba(213, 114, 118, 1) 27%,
+    rgba(214, 194, 188, 1) 52%,
+    rgba(192, 204, 204, 1) 75%,
+    rgba(101, 178, 198, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
 }
-div.contenedor {
-    width: 90%;
-    margin: 10px 10px 0;
-    background-color: #d6c2bc;
-    box-shadow: 0 0 10px 10px #043a47;
-    font-family: "Devitta";
+div.container {
+  width: 90%;
+  margin: 10px 10px 0;
+  background-color: #d6c2bc;
+  box-shadow: 0 0 10px 10px #043a47;
+  font-family: "Devitta";
 }
 header h1 {
-    text-align: center;
-    padding: 20px;
-    margin: 0;
-    font-size: 2.3em;
-    color: #b12f56;
-    font-weight: 500;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  font-size: 2.3em;
+  color: #b12f56;
+  font-weight: 500;
 }
-p.creditos {
-    text-align: center;
-    color: rgb(0, 67, 83);
-    margin: 0;
-    background-color: #aa9ea2;
+p.credits {
+  text-align: center;
+  color: rgb(0, 67, 83);
+  margin: 0;
+  background-color: #aa9ea2;
 }
- /* ** Estilos página principal ** */
+/* ** Estilos página principal ** */
 
- div.reglas {
-    margin: 0 auto;
-    font-size: 17px;
-    padding: 12px;
-    position: relative;
+div.rules {
+  margin: 0 auto;
+  font-size: 17px;
+  padding: 12px;
+  position: relative;
+}
+div.rules h2 {
+  margin-top: 0;
+  text-align: center;
+  color: darkred;
+}
+div.rules ol {
+  padding-left: 1.5rem;
+}
+ol li {
+  margin-top: 10px;
+  padding-left: 8px;
+}
+div.rules p {
+  position: absolute;
+  bottom: -25%;
+  left: 5%;
+  right: 5%;
+  text-align: justify;
+}
+div.play {
+  margin: 80px auto 0;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.play i {
+  font-size: 23px;
+}
+div.play i:first-child {
+  position: relative;
+  bottom: 35px;
+  left: 125px;
+}
+div.play i:last-child {
+  position: relative;
+  top: 35px;
+  right: 122px;
+}
+div.play a {
+  margin: 0 5px;
+  font-size: 28px;
+  text-decoration: none;
+}
+div.play a:active {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+@media only screen and (min-width: 670px) {
+  div.container {
+    width: 960px;
+    height: 700px;
   }
-  div.reglas h2 {
-      margin-top: 0;
-      text-align: center;
-      color: darkred;
+  header h1 {
+    font-size: 2.5em;
   }
-  div.reglas ol {
-    padding-left: 1.5rem;
+  div.rules {
+    width: 95%;
+    border: 2px solid #000000;
+    font-size: 19px;
   }
-  ol li {
-    margin-top: 10px;
-    padding-left: 8px;
+  div.rules p {
+    bottom: -30%;
   }
-  div.reglas p {
-    position: absolute;
-    bottom: -25%;
-    left: 5%;
-    right: 5%;
-    text-align: justify;
+  div.play {
+    margin-top: 60px;
   }
-  div.resultados {
-    margin: 80px auto 0;
-    width: 300px;
-    height: 150px;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  a {
+    font-size: 35px;
   }
-  div.resultados i {
-    font-size: 23px;
-  }
-  div.resultados i:first-child {
-    position: relative;
-    bottom: 35px;
-    left: 125px;
-  }
-  div.resultados i:last-child {
-    position: relative;
-    top: 35px;
-    right: 122px;
-  }
-  div.resultados a {
-    margin: 0 5px;
-    font-size: 28px;
-    text-decoration: none;
-  }
-  div.resultados a:active {
-    cursor: pointer;
-    transform: scale(.9);
-  }
-  @media only screen and (min-width:670px) {
-    div.contenedor{
-      width: 960px;
-      height: 700px;
-    }
-    header h1 {
-      font-size: 2.5em;
-    }
-    div.reglas {
-      width: 95%;
-      border: 2px solid #000000;
-      font-size: 19px;
-    }
-    div.reglas p {
-       bottom : -30%;
-    }
-    div.resultados {
-      margin-top: 60px;
-    }
-    a {
-      font-size: 35px;
-    }
-  }
+}
 
 /* ** Estilos página Juego ** */
 
 section.left {
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-section.left div {
-    width: 250px;
-    height: 250px;
-    margin-top: 20px;
-    position: relative;
+section.left div.difficulty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-section.left div.logo {
-    position: absolute;
-    top: 30px;
+section.left div.difficulty h2 {
+  font-size: 1.3em;
+}
+section.left div.difficulty select.difficulty-select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-size: 16px;
+  font-family: "Devitta";
+  color: #b12f56;
+  line-height: 1.3;
+  padding: 0.4em 1.4em 0.3em 0.8em;
+  border: 1px solid #043a47;
+  box-shadow: 0 1px 0 1px #043a4755;
+  border-radius: 8px;
+  background-image: url("../img/down-arrow.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+}
+select.difficulty-select::-ms-expand {
+    display: none;
+}
+select.difficulty-select:hover {
+    cursor: pointer;
+}
+select.difficulty-select:focus {
+    outline: #043a47 1px solid;
+}
+section.left div.new-game-container {
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: center;
+  align-items: center;
 }
 section.left img {
-    width: 150px;
-    border-radius: 50%;
-    margin: 20px auto;
-    display: block;
+  width: 150px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
 }
 section.left button {
-    display: block;
-    font-size: 1.1em;
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-family: "Devitta";
-    position: absolute;
-    left: 60px;
+  display: block;
+  font-size: 1.1em;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: "Devitta";
 }
 section.right p {
-    text-align: center;
-    font-size: 1.45em;
-    margin: 0 5px 5px;
+  text-align: center;
+  font-size: 1.45em;
+  margin: 0 5px 5px;
 }
 p span {
-    margin: 0 -2px 0 2px;
+  margin: 0 -2px 0 2px;
 }
-section.right div.cuadricula {
-    width: 280px;
-    height: 280px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    box-shadow: 0 0 10px 10px #8d072f;
+section.right div.grid {
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  box-shadow: 0 0 10px 10px #8d072f;
 }
-div.cuadricula button {
-    border: 1px solid whitesmoke;
-    background-color: #d73d6c;
-    font-size: 1.1em;
-    font-weight: bold;
+div.grid button {
+  border: 1px solid whitesmoke;
+  background-color: #d73d6c;
+  font-size: 1.1em;
+  font-weight: bold;
 }
-div.cuadricula button:hover {
-    background-color: #8d072f;
+div.grid button:hover {
+  background-color: #8d072f;
 }
-div.cuadricula button:active {
-    cursor: pointer;
-    transform: scale(0.9);
+div.grid button:active {
+  cursor: pointer;
+  transform: scale(0.9);
 }
 .dos {
-    color: #005338;
+  color: #005338;
 }
 .tres {
-    color: rgb(28, 17, 134);
+  color: rgb(28, 17, 134);
 }
 .cuatro {
-    color: rgb(79, 0, 87);
+  color: rgb(79, 0, 87);
 }
 .cinco {
-    color: #8d0707;
+  color: #8d0707;
 }
 .seis {
-    color: #3f0315;
+  color: #3f0315;
 }
 .siete {
-    color: rgb(221, 0, 0);
+  color: rgb(221, 0, 0);
 }
 .ocho {
-    color: red;
+  color: red;
 }
-.bandera, .bomba, .bombaDet {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.bandera,
+.bomba,
+.bombaDet {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .img-bandera {
-    width : 83%;
+  width: 83%;
 }
 .img-bombaDet {
-    width : 100%;
+  width: 100%;
 }
 .img-bomba {
-    width : 95%;
+  width: 95%;
 }
-@media only screen and (min-width:510px) {
-    div.contenedor {
-        height: auto;
-    }
-    section.right div.cuadricula {
-        width: 370px;
-        height: 370px;
-    }
+@media only screen and (min-width: 510px) {
+  div.container {
+    height: auto;
+  }
+  section.right div.grid {
+    width: 370px;
+    height: 370px;
+  }
 }
-@media only screen and (min-width:800px) {
-    div.contenedor {
-        width: 800px;
-        height: 600px;
-    }
-    main {
-        height: 490px;
-    }
-    section.left {
-        float: left;
-        width: 40%;
-        /* height: 330px; */
-        margin: 80px 0 0 0;
-        /* position: initial; */
-    }
-    section.left div {
-        margin-top: 0;
-    }
-    section.left div.logo {
-        position: initial;
-        margin-top: 30px;
-        height: auto;
-    }
-    section.left button {
-        position: initial;
-        margin: 0 auto;
-    }
-    section.right {
-        float: right;
-        width: 60%;
-    }
+@media only screen and (min-width: 800px) {
+  div.container {
+    width: 800px;
+    height: 600px;
+  }
+  main {
+    height: 490px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  section.left {
+      width: 350px;
+      justify-content: space-between;
+  }
+  section.right {
+      flex-grow: 1;
+  }
+  section.left div.new-game-container {
+      margin: 0;
+      flex-direction: column;
+  }
 }
